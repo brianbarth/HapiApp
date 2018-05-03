@@ -1,0 +1,19 @@
+{
+  "name": "hapiapp",
+  "version": "1.0.0",
+  "description": "easy_hapiapp",
+  "main": "server.js",
+  "dependencies": {
+    "handlebars": "^4.0.11",
+    "hapi": "^17.3.1",
+    "inert": "^5.1.0",
+    "vision": "^5.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "brian_barth",
+  "license": "ISC"
+}

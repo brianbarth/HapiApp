@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Security",
+    "icon_url": "https://app.gig-aware.com/assets/maps/security.png",
+    "color": "#123263"
+  },
+  {
+    "name": "Production",
+    "icon_url": "https://app.gig-aware.com/assets/maps/production.png",
+    "color": "#43962a"
+  },
+  {
+    "name": "Site Operations",
+    "icon_url": "https://app.gig-aware.com/assets/maps/siteops.png",
+    "color": "#f19e38"
+  },
+  {
+    "name": "Other",
+    "icon_url": "https://app.gig-aware.com/assets/maps/default.png",
+    "color": "#f9d949"
+  },
+  {
+    "name": "Medical",
+    "icon_url": "https://app.gig-aware.com/assets/maps/medical.png",
+    "color": "#b72b21"
+  }
+]
