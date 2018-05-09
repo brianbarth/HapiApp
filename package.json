@@ -15,5 +15,8 @@
     "start": "node server.js"
   },
   "author": "brian_barth",
-  "license": "ISC"
+  "license": "ISC",
+  "nodemonConfig": {
+    "ext" : "js,handlebars"
+  }
 }

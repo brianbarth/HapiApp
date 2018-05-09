@@ -1,0 +1,19 @@
+<div class='container'>
+  <h2>This is page two.</h2>
+</div>
+
+<div class='container'>
+  {{#each this}}
+  <ul style="border: 1px solid {{color}}; border-radius: 5px;">
+    <li>{{name}}</li>
+    <li>
+      <img src="{{icon_url}}">
+    </li>
+    <li>{{color}}</li>
+  </ul>
+  {{/each}}
+</div>
+
+<div class='container'>
+  <h2 style="color: blue;">{{add}}</h2>
+</div>

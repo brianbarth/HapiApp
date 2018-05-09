@@ -7,15 +7,14 @@ const Vision = require('vision');
 const styles = require('./styles.json');
 const dataFile = require('./data.json');
 
-
-
 const server = Hapi.server({
   port: 4000,
   routes: {
     files: {
       relativeTo: Path.join(__dirname, 'static')
     }
-  }
+  },
+  debug: { request: '*' }
 });
 
 const viewOptions = {layout: 'layout'};
@@ -26,7 +25,7 @@ const start = async () => {
 
   server.views({
     engines: {
-      html: require('handlebars')
+      handlebars: require('handlebars')
     },
     relativeTo: __dirname,
     path: 'templates',
@@ -73,8 +72,43 @@ const start = async () => {
     method: 'GET',
     path: '/page5.html',
     handler: function (request, h) {
-    
-      return h.view('page5', styles, viewOptions)
+      return h.view('page5', { firstName: null, lastName: null, vehicle: null}, viewOptions)
+    }
+  });
+
+  server.route({
+    method: 'POST',
+    path: '/page5.html',
+    handler: function (request, h) {
+      const {firstName, lastName, vehicle} = request.payload;
+      let badFirstName, badLastName, badVehicle;
+      if(!firstName || firstName.length === 0){
+        badFirstName = 'bad';
+      }
+
+      if(!lastName || lastName.length === 0){
+        badLastName = 'bad';
+      }
+
+      if(!vehicle || vehicle.length === 0){
+        badVehicle = 'bad';
+      }
+
+      if(badFirstName || badLastName || badVehicle){
+        return h.view('page5', { badFirstName, badLastName, badVehicle, firstName, lastName, vehicle }, viewOptions)
+      }
+
+      return h.view('page5success', { firstName, lastName, vehicle }, viewOptions)
+      
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/page6.html',
+    handler: function (request, reply) {
+      console.log(request.payload)
+      return reply.view('page6', styles, viewOptions)
     }
   });
 

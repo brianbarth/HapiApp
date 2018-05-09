@@ -1,0 +1,54 @@
+<style>
+  .bad {
+    border: 2px red solid;
+  }
+  .bad::placeholder {
+    color: red;
+  }
+  
+</style>
+
+<div class='container bg-info' style="border-radius: 5px;"> <!-- container for page -->
+  <div class='container text-center'>
+    <h1>SIMPLE FORM</h1>
+  </div>
+  <form method="POST" action="/page5.html">
+    <div class="form-group-lg">
+      <label for="firstName">First Name:</label>
+      <input id="firstName" type="text" class="form-control {{badFirstName}}" name="firstName" value="{{firstName}}" placeholder="First Name Required">
+    </div>
+    <br>
+
+    <div class="form-group-lg">
+      <label for="lastName">Last Name:</label>
+      <input id="lastName" type="text" class="form-control {{badLastName}}" name="lastName" value="{{lastName}}" placeholder="Last Name Required">
+    </div>
+    <br>
+
+    <div class="radio">
+      {{#if badVehicle}}
+      <h4 style="color: red;">You must choose an option from below!</h4>
+      {{/if}}
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="vehicle" id="optionsRadios1" value="bicycle" {{#ifCond vehicle 'bicycle'}}checked{{/ifCond}}>I ride a bicycle
+      </label>
+    </div>
+
+    <div class="radio">
+      <label>
+        <input type="radio" name="vehicle" id="optionsRadios1" value="car" {{#ifCond vehicle 'car'}}checked{{/ifCond}}>I drive a car
+      </label>
+    </div>
+
+    <div class="radio">
+      <label>
+        <input type="radio" name="vehicle" id="optionsRadios1" value="unicorn" {{#ifCond vehicle 'unicorn'}}checked{{/ifCond}}>I ride a unicorn!
+      </label>
+    </div>
+    <br>
+      
+    <button type="submit" class="btn btn-primary btn-lg mb-3">Submit</button>
+  </form>
+</div>
