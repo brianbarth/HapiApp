@@ -2,16 +2,17 @@
   .bad {
     border: 2px red solid;
   }
+
   .bad::placeholder {
     color: red;
   }
-  
 </style>
 
-<div class='container bg-info' style="border-radius: 5px;"> <!-- container for page -->
+<div class='container bg-light border' style="border-radius: 5px;"><!-- container for page -->
   <div class='container text-center'>
     <h1>SIMPLE FORM</h1>
   </div>
+
   <form method="POST" action="/page5.html">
     <div class="form-group-lg">
       <label for="firstName">First Name:</label>
@@ -25,30 +26,49 @@
     </div>
     <br>
 
-    <div class="radio">
-      {{#if badVehicle}}
-      <h4 style="color: red;">You must choose an option from below!</h4>
-      {{/if}}
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="vehicle" id="optionsRadios1" value="bicycle" {{#ifCond vehicle 'bicycle'}}checked{{/ifCond}}>I ride a bicycle
-      </label>
-    </div>
+    <div class='row'>
+      <div class='col'>
+        {{#if badVehicle}}
+        <h4 style="color: red;">You must choose an option from below!</h4>
+        {{/if}}
 
-    <div class="radio">
-      <label>
-        <input type="radio" name="vehicle" id="optionsRadios1" value="car" {{#ifCond vehicle 'car'}}checked{{/ifCond}}>I drive a car
-      </label>
-    </div>
+        <div class="form-check">
+          <label>
+            <input class="form-check-input" type='radio' name="vehicle" id="optionsRadios1" value="bicycle" {{#ifCond vehicle
+              'bicycle'}}checked{{/ifCond}}>I ride a bicycle
+          </label>
+        </div>
 
-    <div class="radio">
-      <label>
-        <input type="radio" name="vehicle" id="optionsRadios1" value="unicorn" {{#ifCond vehicle 'unicorn'}}checked{{/ifCond}}>I ride a unicorn!
-      </label>
-    </div>
-    <br>
-      
+        <div class="form-check">
+          <label>
+            <input class="form-check-input" type='radio' name="vehicle" id="optionsRadios1" value="car" {{#ifCond vehicle 'car'}}checked{{/ifCond}}>I drive a car
+          </label>
+        </div>
+
+        <div class="form-check">
+          <label>
+            <input class="form-check-input" type='radio' name="vehicle" id="optionsRadios1" value="unicorn" {{#ifCond vehicle
+              'unicorn'}}checked{{/ifCond}}>I ride a unicorn!
+          </label>
+        </div>
+        <br>
+      </div><!--end of column one-->
+        <div class='col'>
+          <div class="form-check">
+            <input type="checkbox" name='attire1' value='hat' class="form-check-input" id="hat">
+            <label class="form-check-label" for="hat">Hat</label>
+          </div>
+          <div class='form-check'>
+            <input type="checkbox" name='attire2' value='pants' class="form-check-input" id="pants">
+            <label class="form-check-label" for="pants">Pants</label>
+          </div>
+          <div class='form-check'>
+            <input type="checkbox" name='attire3' value='shirt' class="form-check-input" id="shirt">
+            <label class="form-check-label" for="shirt">Shirt</label>
+          </div>
+        </div>
+      </div>
+    </div><!--end of row div-->
     <button type="submit" class="btn btn-primary btn-lg mb-3">Submit</button>
   </form>
 </div>

@@ -4,16 +4,17 @@
 
 <div class='container'>
   {{#each this}}
-  <ul style="border: 1px solid {{color}}; border-radius: 5px;">
-    <li>{{name}}</li>
-    <li>
+
+  <ul class='row' style="border: 1px solid {{color}}; border-radius: 5px;">
+    <li class='col p-3 text-center' style="list-style-type:none;">{{name}}</li>
+    <li class='col p-3 text-center' style="list-style-type:none;">
       <img src="{{icon_url}}">
     </li>
-    <li>{{color}}</li>
+    <li class='col p-3 text-center' style="list-style-type:none;">{{color}}</li>
   </ul>
   {{/each}}
 </div>
 
-<div class='container'>
-  <h2 style="color: blue;">{{add}}</h2>
+<div class='container-fluid text-center border'>
+  <h2 class='pt-3' style="color: blue;">{{add}}</h2>
 </div>

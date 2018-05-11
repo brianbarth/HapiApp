@@ -1,11 +1,30 @@
 <div class="container">
   <h2>This is page four.</h2>
-  <div class='container'>
-    {{#each this}}
-    <li>{{firstName}}</li>
-    <li>{{lastName}}</li>
-    <li>{{ID}}</li>
-    <p></p>
+  {{!-- <div class='container'> --}}
+    {{!-- {{#each this}}
+    <ul class='col'>
+    <li style='list-style-type:circle;'>{{firstName}}</li>
+    <li style='list-style-type:circle;'>{{lastName}}</li>
+    <li style='list-style-type:circle;'>{{ID}}</li>
+    </ul>
     {{/each}}
   </div>
-</div>
+</div> --}}
+<table class="table">
+  <thead class='thead-dark'>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">ID</th>
+    </tr>
+  </thead>
+  {{#each this}}
+  <tbody>
+    <tr>
+      <td>{{firstName}}</td>
+      <td>{{lastName}}</td>
+      <td>{{ID}}</td>
+    </tr>
+  </tbody>
+  {{/each}}
+</table>
