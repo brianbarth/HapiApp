@@ -72,7 +72,7 @@ const start = async () => {
     method: 'GET',
     path: '/page5.html',
     handler: function (request, h) {
-      return h.view('page5', { firstName: null, lastName: null, vehicle: null}, viewOptions)
+      return h.view('page5', { firstName: null, lastName: null, vehicle: null, attire: null }, viewOptions)
     }
   });
 
@@ -102,7 +102,7 @@ const start = async () => {
       if(badFirstName || badLastName || badVehicle){
         return h.view('page5', { badFirstName, badLastName, badVehicle, firstName, lastName, vehicle, attire }, viewOptions)
       }
-      console.log(request.payload);
+
       return h.view('page5success', { firstName, lastName, vehicle, attire, attireTrue }, viewOptions)
       
     }
@@ -114,6 +114,17 @@ const start = async () => {
     handler: function (request, reply) {
       console.log(request.payload)
       return reply.view('page6', styles, viewOptions)
+    }
+  });
+
+  server.route({
+    method: 'POST',
+    path: '/page6.html',
+    handler: function(request, h) {
+
+      const {story} = request.payload;
+
+      return h.view('page6success', {story}, viewOptions);
     }
   });
 

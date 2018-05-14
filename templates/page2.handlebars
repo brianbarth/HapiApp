@@ -2,9 +2,9 @@
   <h2>This is page two.</h2>
 </div>
 
-<div class='list-group'>
-  {{#each this}}
+<div class='container'>
 
+  {{#each this}}
   <ul class='row' style="border: 1px solid {{color}}; border-radius: 5px;">
     <li class='col p-3 text-center' style="list-style-type:none;">{{name}}</li>
     <li class='col p-3 text-center' style="list-style-type:none;">
@@ -13,8 +13,9 @@
     <li class='col p-3 text-center' style="list-style-type:none;">{{color}}</li>
   </ul>
   {{/each}}
+
 </div>
 
-<div class='container-fluid text-center border'>
+<div class='container-fluid text-center border-top'>
   <h2 class='pt-3' style="color: blue;">{{add}}</h2>
 </div>
