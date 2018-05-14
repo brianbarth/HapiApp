@@ -1,9 +1,26 @@
 <div style="border-radius: 5px;" class='container well well-lg text-center alert alert-success' role='alert'>
   <h1>SIMPLE FORM</h1>
-  <div class='well well-md bg-light border p-3' style="border-radius: 5px;">
+  <div class='well well-md bg-light border pt-2' style="border-radius: 5px;">
     <h3>Hello {{firstName}} {{lastName}}</h3>
   </div>
-  <div class="well well-md bg-light border p-3 mb-3" style="border-radius: 5px;">
+  <div class="well well-md bg-light border pt-2" style="border-radius: 5px;">
     <h3>You ride a {{vehicle}}</h3>
   </div>
+
+  {{#if attireTrue}}
+    <div class="well well-md bg-light border pt-2 mb-3" style="border-radius: 5px;"> 
+      <h3>You are wearing the following</h3> 
+        <ul class='text-left'>
+          {{#each attire}}
+          <li>
+            {{this}}
+          </li>
+          {{/each}}       
+        </ul>
+    </div>
+  {{else}}
+    <div class="well well-md bg-light border pt-2 mb-3" style="border-radius: 5px;"> 
+      <h3>It appears you are wearing nothing!</h3> 
+    </div>
+  {{/if}}
 </div>

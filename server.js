@@ -80,8 +80,9 @@ const start = async () => {
     method: 'POST',
     path: '/page5.html',
     handler: function (request, h) {
-      const {firstName, lastName, vehicle} = request.payload;
+      const {firstName, lastName, vehicle, attire} = request.payload;
       let badFirstName, badLastName, badVehicle;
+      let attireTrue = true;
       if(!firstName || firstName.length === 0){
         badFirstName = 'bad';
       }
@@ -94,11 +95,15 @@ const start = async () => {
         badVehicle = 'bad';
       }
 
-      if(badFirstName || badLastName || badVehicle){
-        return h.view('page5', { badFirstName, badLastName, badVehicle, firstName, lastName, vehicle }, viewOptions)
+      if(!attire) {
+        attireTrue = false;
       }
 
-      return h.view('page5success', { firstName, lastName, vehicle }, viewOptions)
+      if(badFirstName || badLastName || badVehicle){
+        return h.view('page5', { badFirstName, badLastName, badVehicle, firstName, lastName, vehicle, attire }, viewOptions)
+      }
+      console.log(request.payload);
+      return h.view('page5success', { firstName, lastName, vehicle, attire, attireTrue }, viewOptions)
       
     }
   });

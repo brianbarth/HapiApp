@@ -26,8 +26,9 @@
     </div>
     <br>
 
-    <div class='row'>
+    <div class='row'>  
       <div class='col'>
+        <legend>What is your transportation?</legend>
         {{#if badVehicle}}
         <h4 style="color: red;">You must choose an option from below!</h4>
         {{/if}}
@@ -54,21 +55,22 @@
         <br>
       </div><!--end of column one-->
         <div class='col'>
+          <legend>What are you wearing?</legend>
           <div class="form-check">
-            <input type="checkbox" name='attire1' value='hat' class="form-check-input" id="hat">
+            <input type="checkbox" name='attire' value='hat' class="form-check-input" id="hat" {{#attireCond attire 'hat'}}checked{{/attireCond}}>
             <label class="form-check-label" for="hat">Hat</label>
           </div>
           <div class='form-check'>
-            <input type="checkbox" name='attire2' value='pants' class="form-check-input" id="pants">
+            <input type="checkbox" name='attire' value='pants' class="form-check-input" id="pants" {{#attireCond attire 'pants'}}checked{{/attireCond}}>
             <label class="form-check-label" for="pants">Pants</label>
           </div>
           <div class='form-check'>
-            <input type="checkbox" name='attire3' value='shirt' class="form-check-input" id="shirt">
+            <input type="checkbox" name='attire' value='shirt' class="form-check-input" id="shirt" {{#attireCond attire 'shirt'}}checked{{/attireCond}}>
             <label class="form-check-label" for="shirt">Shirt</label>
           </div>
         </div>
       </div>
+      <button type="submit" class="btn btn-primary btn-lg mb-3">Submit</button>
     </div><!--end of row div-->
-    <button type="submit" class="btn btn-primary btn-lg mb-3">Submit</button>
   </form>
 </div>
