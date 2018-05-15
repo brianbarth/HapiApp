@@ -112,7 +112,7 @@ const start = async () => {
     method: 'GET',
     path: '/page6.html',
     handler: function (request, reply) {
-      console.log(request.payload)
+      
       return reply.view('page6', styles, viewOptions)
     }
   });
