@@ -112,7 +112,10 @@ const start = async () => {
     method: 'GET',
     path: '/page6.html',
     handler: function (request, reply) {
+<<<<<<< HEAD
       
+=======
+>>>>>>> e411c0f3e295b5e4057b41d0f1627b26ce08a79a
       return reply.view('page6', styles, viewOptions)
     }
   });
